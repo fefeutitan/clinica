@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,9 +30,29 @@ public class ConsultaController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Consulta adicionar(@RequestBody Consulta consulta) {
+	public Consulta marcar(@RequestBody Consulta consulta) {
 		return consultaRepository.save(consulta);
 		
 	}
+
+	/*
+	
+	@DeleteMapping("/{consultaId}")
+	public Consulta desmarcar(Consulta consulta) {
+		return consultaRepository.delete(consulta);
+		
+	}
+	@DeleteMapping("/{clienteId}")
+	public ResponseEntity<Void> remover(@PathVariable Long clienteId) {
+		if (!clienteRepository.existsById(clienteId)) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		catalogoClienteService.excluir(clienteId);
+		
+		return ResponseEntity.noContent().build();
+	}*/
+	
+	//public Consulta remarcar //UPDATE
 
 }

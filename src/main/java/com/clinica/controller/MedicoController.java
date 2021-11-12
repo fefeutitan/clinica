@@ -22,11 +22,10 @@ public class MedicoController {
 	private MedicoRepository medicoRepository;
 
 	@GetMapping
-	public List<Medico>  listar(){
+	public List<Medico> listar(){
 		return medicoRepository.findAll();
 		
 	}
-
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
